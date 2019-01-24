@@ -1,16 +1,11 @@
 # expanded_plus_button
 
-A new Flutter project.
+Flutter implementation of **[Plus expanded](https://dribbble.com/shots/3208361-Plus-expanded)** control by Eddie Lobanovskiy 
 
-## Getting Started
+Original idea:
 
-This project is a starting point for a Flutter application.
+<img src="https://cdn.dribbble.com/users/14268/screenshots/3208361/p2m_final_start0.gif" width="300">
 
-A few resources to get you started if this is your first Flutter project:
+Flutter implementation:
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+![flutter](./demo.gif)
