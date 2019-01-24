@@ -13,10 +13,12 @@ class ExpandedPlusBar extends AnimatedWidget {
 
   final VoidCallback onPressed;
 
-  static const double plusWidth = 3;
+  static const double plusWidth = 2;
   static const double plusHeight = 48;
 
-  static final barColor = Colors.blueGrey[100];
+  static const double topContainerHeight = 60;
+
+  static final barColor = Color.fromRGBO(170, 170, 190, 1);
 
   ExpandedPlusBar(
       {Key key,
@@ -27,10 +29,10 @@ class ExpandedPlusBar extends AnimatedWidget {
       this.onPressed,
       this.topRowChildren})
       : containerHeightAnimation = Tween(
-          begin: plusHeight,
-          end: plusHeight * 2,
+          begin: topContainerHeight,
+          end: topContainerHeight * 2,
         ).animate(CurvedAnimation(parent: animation, curve: Interval(0, 0.4))),
-        containerMarginAnimation = Tween(begin: plusHeight / 4, end: 0.0)
+        containerMarginAnimation = Tween(begin: plusHeight / 2, end: 0.0)
             .animate(
                 CurvedAnimation(parent: animation, curve: Interval(0, 0.4))),
         bottomButtonsOpacityAnimation = Tween(begin: 1.0, end: 0.0).animate(
@@ -70,13 +72,13 @@ class ExpandedPlusBar extends AnimatedWidget {
   Widget topContainer() => Container(
       margin: EdgeInsets.only(
           top: containerMarginAnimation.value,
-          bottom: containerMarginAnimation.value),
+          bottom: containerMarginAnimation.value / 2),
       width: topContainerWidthAnimation.value,
-      height: plusHeight,
+      height: topContainerHeight,
       color: barColor,
       child: Opacity(
           opacity: topContainerOpacityAnimation.value,
-          child: topContainerWidthAnimation.value > 150
+          child: topContainerWidthAnimation.value > 200
               ? Row(
                   children: topRowChildren,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
